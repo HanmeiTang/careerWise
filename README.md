@@ -1,6 +1,12 @@
 # CareerWise
 A Job-hunting Recommendation System
 
+# Features
+* Fetches data from Github Job API
+* Implements content-based recommendation for better results
+* Keyword extraction by MonkeyLearn API
+* 
+
 # Components
 * Client (HTML,CSS,JS)
 * HTTP Server (Apache Tomcat)
@@ -16,13 +22,14 @@ A Job-hunting Recommendation System
     * Java Servlet: Java class to handle RPC on server side
     * Tomcat is a environment to run this web page, which is also one of the major Java Framework
     
-* Postman
+* Postman [download](https://www.postman.com/downloads/)
 * IntelliJ (Ultimate)
     * [Official guide](https://www.jetbrains.com/help/idea/configuring-and-managing-application-server-integration.html#76331)
     * Java Enterprise -> Set Tomcat as `Application Server`
 * Git Hub Jobs API [Link](https://jobs.github.com/api)
 * Cloud: [AWS](http://aws.amazon.com)
 * MySQL [download](https://dev.mysql.com/downloads/workbench/)
+* MonkeyLearn [link](https://app.monkeylearn.com/accounts/register/)
 
 ## Demos
 
