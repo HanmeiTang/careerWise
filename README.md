@@ -14,6 +14,6 @@ A Job-hunting Recommendation System
     * [Official guide](https://www.jetbrains.com/help/idea/configuring-and-managing-application-server-integration.html#76331)
     * Java Enterprise -> Set Tomcat as `Application Server`
 
-
+* Git Hub Jobs API [Link](https://jobs.github.com/api)
 ## Demos
 

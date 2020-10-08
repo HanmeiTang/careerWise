@@ -17,5 +17,4 @@ public class RpcHelper {
 		response.setContentType("application/json");
 		response.getWriter().print(obj);
 	}
-
 }
