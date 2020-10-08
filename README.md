@@ -14,6 +14,9 @@ A Job-hunting Recommendation System
     * Rpc Handlers (Java Servlets)
     * MySQL Client <--> MySQL DB
 
+# Before Clone
+* Create a hidden config file `.careerwise.yaml` at app root directory
+* Add `MONKEY_LEARN_API_KEY` to `.careerwise.yaml`
 
 # List of toolkits
 * Apache Tomcat 9.0.35
