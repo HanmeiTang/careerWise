@@ -13,3 +13,7 @@ A Job-hunting Recommendation System
 * IntelliJ
     * [Official guide](https://www.jetbrains.com/help/idea/configuring-and-managing-application-server-integration.html#76331)
     * Java Enterprise -> Set Tomcat as `Application Server`
+
+
+## Demos
+[Hello World!](http://localhost:8080/careerWise/)
