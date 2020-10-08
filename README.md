@@ -5,7 +5,7 @@ A Job-hunting Recommendation System
 * Fetches data from Github Job API
 * Implements content-based recommendation using keywords extracted from search string
 * Keyword extraction by MonkeyLearn API through TF-IDF algorithm
-* 
+* Backend MySQL on Amazon Relational Database Service (RDS)
 
 # Components
 * Client (HTML,CSS,JS)
@@ -15,19 +15,20 @@ A Job-hunting Recommendation System
     * MySQL Client <--> MySQL DB
 
 # Database Management System architecture
-* History - `time`
-    * User
-        * `user id`
-        * `password`
-        * `firstname`
-        * `lastname` 
-    * Item
-        * `item id`
-        * `name`
-        * `address`
-        * `image url`
-        * `url`
-        * `keyword` list
+* Table History
+   * `time`
+* Table `users`: stores user information
+   * `user id`
+   * `password`
+   * `firstname`
+   * `lastname` 
+* Table `items`: stores job item information
+   * `item id`
+   * `name`
+   * `address`
+   * `image url`
+   * `url`
+   * `keyword` list
 
 
 # Before Clone
@@ -49,6 +50,8 @@ A Job-hunting Recommendation System
 * Cloud: [AWS](http://aws.amazon.com)
 * MySQL [download](https://dev.mysql.com/downloads/workbench/)
 * MonkeyLearn [link](https://app.monkeylearn.com/accounts/register/)
+* Core JAVA Interfaces
+   * Java Database Connectivity (JDBC) [link](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-usagenotes-connect-drivermanager.html)
 
 ## Demos
 
