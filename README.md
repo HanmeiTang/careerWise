@@ -14,6 +14,22 @@ A Job-hunting Recommendation System
     * Rpc Handlers (Java Servlets)
     * MySQL Client <--> MySQL DB
 
+# Database Management System architecture
+* History - `time`
+    * User
+        * `user id`
+        * `password`
+        * `firstname`
+        * `lastname` 
+    * Item
+        * `item id`
+        * `name`
+        * `address`
+        * `image url`
+        * `url`
+        * `keyword` list
+
+
 # Before Clone
 * Create a hidden config file `.careerwise.yaml` at app root directory
 * Add `MONKEY_LEARN_API_KEY` to `.careerwise.yaml`
