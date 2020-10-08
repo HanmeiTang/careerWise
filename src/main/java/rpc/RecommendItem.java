@@ -29,13 +29,11 @@ public class RecommendItem extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("application/json");
-		PrintWriter writer = response.getWriter();
-		
 		JSONArray array = new JSONArray();
 		array.put(new JSONObject().put("name", "abcd").put("address", "San Francisco").put("time", "01/01/2017"));
 		array.put(new JSONObject().put("name", "1234").put("address", "San Diego").put("time", "01/01/2017"));
-		writer.print(array);;
+		RpcHelper.writeJsonArray(response, array);
+		
 		
 	}
 

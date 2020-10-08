@@ -29,14 +29,11 @@ public class SearchItem extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Get user name from HTTP query
-		response.setContentType("application/json");
-		PrintWriter writer = response.getWriter();
 		JSONArray array = new JSONArray();
-		
 		array.put(new JSONObject().put("username", "abcd"));
 		array.put(new JSONObject().put("username", "1234"));
 		
-		writer.print(array);
+		RpcHelper.writeJsonArray(response, array);
 		
 //		if (request.getParameter("username") != null) {
 //			JSONObject obj = new JSONObject();
