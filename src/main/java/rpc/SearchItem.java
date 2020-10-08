@@ -29,9 +29,13 @@ public class SearchItem extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
 		PrintWriter writer = response.getWriter();
-		JSONObject obj = new JSONObject();
-		obj.put("username", "abcd");
-		writer.print(obj);
+		if (request.getParameter("username") != null) {
+			JSONObject obj = new JSONObject();
+			String username = request.getParameter("username");
+			obj.put("username", username);
+			writer.print(obj);
+		}
+		
 	}
 
 	/**
