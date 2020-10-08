@@ -1,6 +1,14 @@
 # CareerWise
 A Job-hunting Recommendation System
 
+# Components
+* Client (HTML,CSS,JS)
+* HTTP Server (Apache Tomcat)
+    * GitHub Job API Client <--> GitHub online
+    * Rpc Handlers (Java Servlets)
+    * MySQL Client <--> MySQL DB
+
+
 # List of toolkits
 * Apache Tomcat 9.0.35
     * This is a open-source Java Servlet Container developed by Apache Software Foundation
@@ -9,11 +17,12 @@ A Job-hunting Recommendation System
     * Tomcat is a environment to run this web page, which is also one of the major Java Framework
     
 * Postman
-
-* IntelliJ
+* IntelliJ (Ultimate)
     * [Official guide](https://www.jetbrains.com/help/idea/configuring-and-managing-application-server-integration.html#76331)
     * Java Enterprise -> Set Tomcat as `Application Server`
-
 * Git Hub Jobs API [Link](https://jobs.github.com/api)
+* Cloud: [AWS](http://aws.amazon.com)
+* MySQL [download](https://dev.mysql.com/downloads/workbench/)
+
 ## Demos
 

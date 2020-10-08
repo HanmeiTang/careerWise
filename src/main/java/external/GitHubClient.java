@@ -16,7 +16,7 @@ import org.json.JSONArray;
 
 public class GitHubClient {
 	private static final String URL_TEMPLATE = "https://jobs.github.com/positions.json?description=%s&lat=%s&long=%s";
-	private static final String DEFAULT_KEYWORD = "developer";
+	private static final String DEFAULT_KEYWORD = "develop";
 
 	public JSONArray search(double lat, double lon, String keyword) {
 		if (keyword == null) {
@@ -29,6 +29,7 @@ public class GitHubClient {
 		}
 
 		String url = String.format(URL_TEMPLATE, keyword, lat, lon);
+		System.out.println(url);
 
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
