@@ -3,6 +3,8 @@ package external;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.List;
+import java.util.ArrayList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -13,12 +15,16 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
+import org.json.JSONObject;
+
+import entity.Item;
+import entity.Item.ItemBuilder;
 
 public class GitHubClient {
 	private static final String URL_TEMPLATE = "https://jobs.github.com/positions.json?description=%s&lat=%s&long=%s";
 	private static final String DEFAULT_KEYWORD = "develop";
 
-	public JSONArray search(double lat, double lon, String keyword) {
+	public List<Item> search(double lat, double lon, String keyword) {
 		if (keyword == null) {
 			keyword = DEFAULT_KEYWORD;
 		}
@@ -29,24 +35,24 @@ public class GitHubClient {
 		}
 
 		String url = String.format(URL_TEMPLATE, keyword, lat, lon);
-		System.out.println(url);
+		// System.out.println(url);
 
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		// Create a custom response handler
-		ResponseHandler<JSONArray> responseHandler = new ResponseHandler<JSONArray>() {
+		ResponseHandler<List<Item>> responseHandler = new ResponseHandler<List<Item>>() {
 
 			@Override
-			public JSONArray handleResponse(final HttpResponse response) throws IOException {
+			public List<Item> handleResponse(final HttpResponse response) throws IOException {
 				if (response.getStatusLine().getStatusCode() != 200) {
-					return new JSONArray();
+					return new ArrayList<>();
 				}
 				HttpEntity entity = response.getEntity();
 				if (entity == null) {
-					return new JSONArray();
+					return new ArrayList<>();
 				}
 				String responseBody = EntityUtils.toString(entity);
-				return new JSONArray(responseBody);
+				return getItemList(new JSONArray(responseBody));
 			}
 		};
 
@@ -58,7 +64,30 @@ public class GitHubClient {
 			e.printStackTrace();
 		}
 
-		return new JSONArray();
+		return new ArrayList<>();
+	}
+
+	private List<Item> getItemList(JSONArray array) {
+		List<Item> itemList = new ArrayList<>();
+		for (int i = 0; i < array.length(); ++i) {
+			JSONObject object = array.getJSONObject(i);
+			ItemBuilder builder = new ItemBuilder();
+
+			builder.setItemId(getStringFieldOrEmpty(object, "id"));
+			builder.setName(getStringFieldOrEmpty(object, "title"));
+			builder.setAddress(getStringFieldOrEmpty(object, "location"));
+			builder.setUrl(getStringFieldOrEmpty(object, "url"));
+			builder.setImageUrl(getStringFieldOrEmpty(object, "company_logo"));
+
+			Item item = builder.build();
+			itemList.add(item);
+		}
+
+		return itemList;
+	}
+
+	private String getStringFieldOrEmpty(JSONObject obj, String field) {
+		return obj.isNull(field) ? "" : obj.getString(field);
 	}
 
 }

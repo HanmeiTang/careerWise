@@ -1,6 +1,8 @@
 package entity;
 
 import java.util.Set;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class Item {
 	// Cast GitHub response to a concise hashmap
@@ -44,6 +46,17 @@ public class Item {
 		this.url = ib.url;
 
 	}
+	
+	public JSONObject toJSONObject() {
+		JSONObject obj = new JSONObject();
+		obj.put("item_id", itemId);
+		obj.put("name", name);
+		obj.put("address", address);
+		obj.put("keywords", new JSONArray(keywords));
+		obj.put("image_url", imageUrl);
+		obj.put("url", url);
+		return obj;
+	}
 
 	public static class ItemBuilder {
 		private String itemId;
@@ -80,6 +93,7 @@ public class Item {
 		public Item build() {
 			return new Item(this);
 		}
+
 
 	}
 
