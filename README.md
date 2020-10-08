@@ -3,8 +3,8 @@ A Job-hunting Recommendation System
 
 # Features
 * Fetches data from Github Job API
-* Implements content-based recommendation for better results
-* Keyword extraction by MonkeyLearn API
+* Implements content-based recommendation using keywords extracted from search string
+* Keyword extraction by MonkeyLearn API through TF-IDF algorithm
 * 
 
 # Components
