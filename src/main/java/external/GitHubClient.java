@@ -22,21 +22,31 @@ import entity.Item;
 import entity.Item.ItemBuilder;
 
 public class GitHubClient {
-    private static final String URL_TEMPLATE = "https://jobs.github.com/positions.json?description=%s&lat=%s&long=%s";
-    private static final String DEFAULT_KEYWORD = "java";
+    private static final String URL_TEMPLATE1 = "https://jobs.github.com/positions.json?description=%s&lat=%s&long=%s";
+    private static final String URL_TEMPLATE2 = "https://jobs.github.com/positions.json?description=%s&location=%s";
+    private static final String DEFAULT_KEYWORD = "engineer";
 
-    public List<Item> search(double lat, double lon, String keyword) {
+    public List<Item> search(Double lat, Double lon, String keyword, String location) {
         if (keyword == null) {
             keyword = DEFAULT_KEYWORD;
         }
+        
         try {
             keyword = URLEncoder.encode(keyword, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-
-        String url = String.format(URL_TEMPLATE, keyword, lat, lon);
-        // System.out.println(url);
+        
+        // if location is provided, lat and lon will be disabled!
+        // since almost all jobs are currently remote....
+        String url;
+        if (location != null && location.length() != 0) {
+        	url = String.format(URL_TEMPLATE2, keyword, location);
+        } else {
+        	url = String.format(URL_TEMPLATE1, keyword, lat, lon);
+        }
+        
+         System.out.println(url);
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
 

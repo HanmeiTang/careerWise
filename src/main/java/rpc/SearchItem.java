@@ -1,6 +1,7 @@
 package rpc;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Set;
 
@@ -8,7 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -37,27 +37,22 @@ public class SearchItem extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	
-    	// Session validation
-    	HttpSession session = request.getSession(false);
-		if (session == null) {
-			response.setStatus(403);
-			return;
-		}
-
+    	Double lat;
+    	Double lon;
 
         // Get user name from HTTP query
         String userId = request.getParameter("user_id");
-        double lat = Double.parseDouble(request.getParameter("lat"));
-        double lon = Double.parseDouble(request.getParameter("lon"));
-
-        // test
-        // JSONArray array = new JSONArray();
-        // array.put(new JSONObject().put("username", "abcd"));
-        // array.put(new JSONObject().put("username", "1234"));
+        String location = request.getParameter("location");
+        try {
+        	lat = Double.parseDouble(request.getParameter("lat"));
+        	lon = Double.parseDouble(request.getParameter("lon"));
+        } catch (NullPointerException e) {
+        	lat = null;
+        	lon = null;
+        }
 
         GitHubClient client = new GitHubClient();
-        List<Item> items = client.search(lat, lon, null);
+        List<Item> items = client.search(lat, lon, null, location);
 
         MySQLConnection connection = new MySQLConnection();
         Set<String> favoritedItemIds = connection.getFavoriteItemIds(userId);
