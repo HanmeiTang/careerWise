@@ -56,6 +56,9 @@ A Job-hunting Recommendation System, which aims to user personalization to impro
 * Core JAVA APIs
    * [Apache Http Client](https://hc.apache.org/httpcomponents-client-ga/)
    * [Java Database Connectivity (JDBC)](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-usagenotes-connect-drivermanager.html), [connect](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-connect-drivermanager.html)
+* Docker
 
 ## Demos
-
+http://18.216.12.121/careerWise/
+username: 1234
+password: 1234
