@@ -10,7 +10,6 @@ import org.yaml.snakeyaml.Yaml;
 public class YamlUtil {
 	public static String currentDir = System.getProperty("user.dir");
 	public static String yamlName = ".careerwise.yaml";
-	public String yaml_dir;
 	
 	public static HashMap<String, String> getContent() {
 		Yaml yaml = new Yaml();
@@ -33,7 +32,7 @@ public class YamlUtil {
 	public static void main(String[] args) {
 		// Quick demo
 		System.out.println(YamlUtil.currentDir);
-		System.out.println(YamlUtil.getContent().get("MODEL_ID"));
+		System.out.println(YamlUtil.getContent().get("MONKEY_LEARN_API_KEY"));
 	}
 
 }

@@ -11,10 +11,15 @@ import com.monkeylearn.MonkeyLearn;
 import com.monkeylearn.MonkeyLearnException;
 import com.monkeylearn.MonkeyLearnResponse;
 
+
 public class MonkeyLearnClient {
-	// TODO: put API_KEY to config file
 	private static final String API_KEY = "d8af8696f21b4ff5b1422becebe06bd19be93e81";
 	private static final String MODEL_ID = "ex_YCya9nrn";
+	
+	public MonkeyLearnClient() {
+		//API_KEY = YamlUtil.getContent().get("MONKEY_LEARN_API_KEY");
+		//MODEL_ID = YamlUtil.getContent().get("MONKEY_LEARN_MODEL_ID");
+	}
 
 	public static void main(String[] args) {
 
@@ -22,7 +27,7 @@ public class MonkeyLearnClient {
 				"Elon Musk has shared a photo of the spacesuit designed by SpaceX. " 
 		+ "This is the second image shared of the new design " 
 						+ "and the first to feature the spacesuit’s full-body look.", };
-		List<List<String>> words = extractKeywords(textList);
+		List<List<String>> words = MonkeyLearnClient.extractKeywords(textList);
 		for (List<String> ws : words) {
 			for (String w : ws) {
 				System.out.println(w);
@@ -69,4 +74,5 @@ public class MonkeyLearnClient {
 		}
 		return topKeywords;
 	}
+	
 }
