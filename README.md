@@ -16,20 +16,23 @@ A Job-hunting Recommendation System, which aims to user personalization to impro
 
 # Database Management System architecture
 * Table History
+   * `user_id`
+   * `item_id`
    * `time`
 * Table `users`: stores user information
-   * `user id`
+   * `user_id`
    * `password`
    * `firstname`
    * `lastname` 
 * Table `items`: stores job item information
-   * `item id`
+   * `item_id`
    * `name`
    * `address`
-   * `image url`
+   * `image_url`
    * `url`
-* Table `keyword` 
-
+* Table `keyword`: item and keyword relationship
+    * `item_id`
+    * `keyword`
 
 # Before Clone
 * Create a hidden config file `.careerwise.yaml` at app root directory

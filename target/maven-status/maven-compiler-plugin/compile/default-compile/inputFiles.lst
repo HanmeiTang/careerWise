@@ -4,6 +4,7 @@
 /Users/hanmeitang/repos/workspace-eclipse/careerWise/src/main/java/db/MySQLTableCreation.java
 /Users/hanmeitang/repos/workspace-eclipse/careerWise/src/main/java/external/GitHubClient.java
 /Users/hanmeitang/repos/workspace-eclipse/careerWise/src/main/java/entity/Item.java
+/Users/hanmeitang/repos/workspace-eclipse/careerWise/src/main/java/rpc/ItemHistory.java
 /Users/hanmeitang/repos/workspace-eclipse/careerWise/src/main/java/db/MySQLConnection.java
 /Users/hanmeitang/repos/workspace-eclipse/careerWise/src/main/java/db/MySQLDBUtil.java
 /Users/hanmeitang/repos/workspace-eclipse/careerWise/src/main/java/external/MonkeyLearnClient.java
