@@ -59,6 +59,6 @@ A Job-hunting Recommendation System, which aims to user personalization to impro
 * Docker
 
 ## Demos
-http://18.216.12.121/careerWise/
-username: 1234
-password: 1234
+* http://18.216.12.121/careerWise/
+* username: 1234
+* password: 1234
