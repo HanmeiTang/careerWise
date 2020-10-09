@@ -19,6 +19,7 @@
         document.querySelector('#login-btn').addEventListener('click', login);
         document.querySelector('#register-form-btn').addEventListener('click', showRegisterForm);
         document.querySelector('#register-btn').addEventListener('click', register);
+        document.querySelector('#global-btn').addEventListener('click', loadGlobalItems);
         document.querySelector('#nearby-btn').addEventListener('click', loadNearbyItems);
         document.querySelector('#fav-btn').addEventListener('click', loadFavoriteItems);
         document.querySelector('#recommend-btn').addEventListener('click', loadRecommendedItems);
@@ -369,6 +370,40 @@
     // AJAX call server-side APIs
     // -------------------------------------
 
+    /**
+     * API #0 Load the remote items API end point: [GET]
+     * /search?user_id=1111&location=remote
+     */
+    function loadGlobalItems() {
+        console.log('loadRemoteItems');
+        activeBtn('global-btn');
+
+        // The request parameters
+        var url = './search';
+        var params = 'user_id=' + user_id + '&location=remote';
+        var data = null;
+
+        // display loading message
+        showLoadingMessage('Loading remote items...');
+
+        // make AJAX call
+        ajax('GET', url + '?' + params, data,
+            // successful callback
+            function (res) {
+                var items = JSON.parse(res);
+                if (!items || items.length === 0) {
+                    showWarningMessage('No remote item...');
+                } else {
+                    listItems(items);
+                }
+            },
+            // failed callback
+            function () {
+                showErrorMessage('Cannot load remote items...');
+            }
+        );
+    }
+    
     /**
      * API #1 Load the nearby items API end point: [GET]
      * /search?user_id=1111&lat=37.38&lon=-122.08
