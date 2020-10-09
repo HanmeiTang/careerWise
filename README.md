@@ -4,7 +4,7 @@ A Job-hunting Recommendation System, which aims to user personalization to impro
 * username: 1234
 * password: 1234
 
-![Demo image](“https://github.com/HanmeiTang/careerWise/blob/master/favorite.png?raw=true”)
+![GitHub Logo](https://github.com/HanmeiTang/packaging_tutorial/blob/master/screenshot.png)
 
 # Features
 * Fetches data from Github Job API
