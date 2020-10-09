@@ -25,7 +25,7 @@ public class RpcHelper {
         response.getWriter().print(obj);
     }
 
-    // Convert a JSON object to Item object
+    // Convert a HTTP request body (JSON) object to Item object
     public static Item parseFavoriteItem(JSONObject favoriteItem) {
         ItemBuilder builder = new ItemBuilder();
         builder.setItemId(favoriteItem.getString("item_id"));

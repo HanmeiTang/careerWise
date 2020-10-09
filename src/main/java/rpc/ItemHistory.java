@@ -56,6 +56,7 @@ public class ItemHistory extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	// Add favorite
         MySQLConnection connection = new MySQLConnection();
         JSONObject input = new JSONObject(IOUtils.toString(request.getReader()));
         String userId = input.getString("user_id");
@@ -72,6 +73,7 @@ public class ItemHistory extends HttpServlet {
      */
     protected void doDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	// Remove favorite
         MySQLConnection connection = new MySQLConnection();
         JSONObject input = new JSONObject(IOUtils.toString(request.getReader()));
         String userId = input.getString("user_id");
