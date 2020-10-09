@@ -1,100 +1,101 @@
 package entity;
 
 import java.util.Set;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Item {
-	// Cast GitHub response to a concise hashmap
-	private String itemId;
-	private String name;
-	private String address;
-	private Set<String> keywords;
-	private String imageUrl;
-	private String url;
+    // Cast GitHub response to a concise hashmap
+    private String itemId;
+    private String name;
+    private String address;
+    private Set<String> keywords;
+    private String imageUrl;
+    private String url;
 
-	public String getItemId() {
-		return itemId;
-	}
+    public String getItemId() {
+        return itemId;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public Set<String> getKeywords() {
-		return keywords;
-	}
+    public Set<String> getKeywords() {
+        return keywords;
+    }
 
-	public String getImageUrl() {
-		return imageUrl;
-	}
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	private Item(ItemBuilder ib) {
-		this.itemId = ib.itemId;
-		this.name = ib.name;
-		this.address = ib.address;
-		this.keywords = ib.keywords;
-		this.imageUrl = ib.imageUrl;
-		this.url = ib.url;
+    private Item(ItemBuilder ib) {
+        this.itemId = ib.itemId;
+        this.name = ib.name;
+        this.address = ib.address;
+        this.keywords = ib.keywords;
+        this.imageUrl = ib.imageUrl;
+        this.url = ib.url;
 
-	}
-	
-	public JSONObject toJSONObject() {
-		JSONObject obj = new JSONObject();
-		obj.put("item_id", itemId);
-		obj.put("name", name);
-		obj.put("address", address);
-		obj.put("keywords", new JSONArray(keywords));
-		obj.put("image_url", imageUrl);
-		obj.put("url", url);
-		return obj;
-	}
+    }
 
-	public static class ItemBuilder {
-		private String itemId;
-		private String name;
-		private String address;
-		private Set<String> keywords;
-		private String imageUrl;
-		private String url;
+    public JSONObject toJSONObject() {
+        JSONObject obj = new JSONObject();
+        obj.put("item_id", itemId);
+        obj.put("name", name);
+        obj.put("address", address);
+        obj.put("keywords", new JSONArray(keywords));
+        obj.put("image_url", imageUrl);
+        obj.put("url", url);
+        return obj;
+    }
 
-		public void setItemId(String itemId) {
-			this.itemId = itemId;
-		}
+    public static class ItemBuilder {
+        private String itemId;
+        private String name;
+        private String address;
+        private Set<String> keywords;
+        private String imageUrl;
+        private String url;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+        public void setItemId(String itemId) {
+            this.itemId = itemId;
+        }
 
-		public void setAddress(String address) {
-			this.address = address;
-		}
+        public void setName(String name) {
+            this.name = name;
+        }
 
-		public void setKeywords(Set<String> keywords) {
-			this.keywords = keywords;
-		}
+        public void setAddress(String address) {
+            this.address = address;
+        }
 
-		public void setImageUrl(String imageUrl) {
-			this.imageUrl = imageUrl;
-		}
+        public void setKeywords(Set<String> keywords) {
+            this.keywords = keywords;
+        }
 
-		public void setUrl(String url) {
-			this.url = url;
-		}
+        public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+        }
 
-		public Item build() {
-			return new Item(this);
-		}
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public Item build() {
+            return new Item(this);
+        }
 
 
-	}
+    }
 
 }
