@@ -3,7 +3,7 @@ package db;
 import util.YamlUtil;
 
 public class MySQLDBUtil {
-	private static final String INSTANCE = YamlUtil.getContent().get("AWS_MODEL_ID");
+	private static final String INSTANCE = YamlUtil.getContent().get("AWS_INSTANCE");
 	private static final String PORT_NUM = "3306";
 	public static final String DB_NAME = YamlUtil.getContent().get("AWS_DB_NAME");
 	private static final String USERNAME = YamlUtil.getContent().get("AWS_USERNAME");

@@ -28,7 +28,7 @@ A Job-hunting Recommendation System
    * `address`
    * `image url`
    * `url`
-   * `keyword` list
+* Table `keyword` 
 
 
 # Before Clone
@@ -51,7 +51,7 @@ A Job-hunting Recommendation System
 * MySQL [download](https://dev.mysql.com/downloads/workbench/)
 * MonkeyLearn [link](https://app.monkeylearn.com/accounts/register/)
 * Core JAVA Interfaces
-   * Java Database Connectivity (JDBC) [link](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-usagenotes-connect-drivermanager.html)
+   * Java Database Connectivity (JDBC) [link](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-usagenotes-connect-drivermanager.html), [connect](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-connect-drivermanager.html)
 
 ## Demos
 
