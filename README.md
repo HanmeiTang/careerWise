@@ -4,6 +4,8 @@ A Job-hunting Recommendation System, which aims to user personalization to impro
 * username: 1234
 * password: 1234
 
+![Demo image](“https://github.com/HanmeiTang/careerWise/blob/master/favorite.png”)
+
 # Features
 * Fetches data from Github Job API
 * Implements **content-based** recommendation using keywords extracted from search string using **MonkeyLearn API** (TF-IDF algorithm)
