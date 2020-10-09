@@ -1,6 +1,6 @@
 # CareerWise
 A Job-hunting Recommendation System, which aims to user personalization to improve job search and recommendation.
-* http://18.216.12.121/careerWise/
+* [Demo Link](http://18.216.12.121/careerWise/)
 * username: 1234
 * password: 1234
 
