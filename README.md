@@ -3,9 +3,9 @@ A Job-hunting Recommendation System, which aims to user personalization to impro
 
 # Features
 * Fetches data from Github Job API
-* Implements *content-based* recommendation using keywords extracted from search string using *MonkeyLearn API* (TF-IDF algorithm)
-* Backend *MySQL* on *Amazon RDS* to store user data
-* Deployed server to *Amazon EC2* to handle 150 queries per second tested by *Apache JMeter*
+* Implements **content-based** recommendation using keywords extracted from search string using **MonkeyLearn API** (TF-IDF algorithm)
+* Backend **MySQL** on **Amazon RDS** to store user data
+* Deployed server to **Amazon EC2** to handle 150 queries per second tested by **Apache JMeter**
 
 # Components
 * Client (HTML,CSS,JS)
