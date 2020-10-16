@@ -5,7 +5,7 @@ package db;
 
 public class MySQLDBUtil {
     //private static final String INSTANCE = YamlUtil.getContent().get("AWS_INSTANCE");
-	private static final String INSTANCE = "careerwise-db.citiv7qnn1e7.us-east-2.rds.amazonaws.com";
+	private static final String INSTANCE = "careerwise-instance.citiv7qnn1e7.us-east-2.rds.amazonaws.com";
     private static final String PORT_NUM = "3306";
     //public static final String DB_NAME = YamlUtil.getContent().get("AWS_DB_NAME");
     public static final String DB_NAME = "careerWise";
@@ -15,7 +15,7 @@ public class MySQLDBUtil {
     private static final String PASSWORD = "Aws_0218";
     public static final String URL = "jdbc:mysql://" + INSTANCE + ":" + PORT_NUM + "/" + DB_NAME + "?user=" + USERNAME
             + "&password=" + PASSWORD + "&autoReconnect=true&serverTimezone=UTC";
-
+    
     public static void main(String[] args) {
         System.out.println(MySQLDBUtil.INSTANCE);
     }
