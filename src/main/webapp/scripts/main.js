@@ -235,7 +235,7 @@
             return
         }
 
-        password = md5(username + md5(password));
+        //password = md5(username + md5(password));
 
         // The request parameters
         var url = './register';

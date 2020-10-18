@@ -180,7 +180,7 @@
     function login() {
         var username = document.querySelector('#username').value;
         var password = document.querySelector('#password').value;
-        password = md5(username + md5(password));
+        //password = md5(username + md5(password));
 
         // The request parameters
         var url = './login';
@@ -234,7 +234,7 @@
             return
         }
 
-        password = md5(username + md5(password));
+        //password = md5(username + md5(password));
 
         // The request parameters
         var url = './register';

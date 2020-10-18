@@ -13,7 +13,7 @@ import com.monkeylearn.MonkeyLearnResponse;
 
 
 public class MonkeyLearnClient {
-    private static final String API_KEY = "160f027068789d3fbc121e6d18937d6c24126ef4";
+    private static final String API_KEY = "1dd7c8fb7f4e24e64db1d94286d9b0e39911f314";
     private static final String MODEL_ID = "ex_YCya9nrn";
 
     public MonkeyLearnClient() {
