@@ -1,9 +1,10 @@
 # CareerWise
 A Job-hunting Recommendation System, which aims to user personalization to improve job search and recommendation.
-* [Demo Link](http://18.216.12.121/careerWise/)
+* [Demo video](https://youtu.be/URA-_n2epgg)
+* [Try it out](http://18.216.12.121/careerWise/)
 * username: 1234
 * password: 1234
-* I am using a free plan of MonkeyLearn, sometimes the quote is out of 300/month limit and query function will down (500 Error).
+* Note: I am using a free plan of MonkeyLearn, sometimes the quote is out of 300/month limit and query function will down (500 Error).
 
 ![GitHub Logo](https://github.com/HanmeiTang/packaging_tutorial/blob/master/screenshot.png)
 
